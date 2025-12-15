@@ -72,7 +72,7 @@ const JeffLanding: React.FC = () => {
                     </div>
 
                     <h1 className="font-space text-3xl md:text-5xl font-medium text-[#1a1a1a] tracking-tight drop-shadow-sm select-none leading-tight">
-                        Create your own <span className="font-chewy text-6xl md:text-7xl mx-2">Jeff pfp</span> <br className="hidden md:block" /> in just one click!
+                        create your own <span className="font-chewy text-6xl md:text-7xl mx-2">jeff pfp</span> <br className="hidden md:block" /> in just one click!
                     </h1>
                 </div>
 
@@ -88,7 +88,7 @@ const JeffLanding: React.FC = () => {
                             type="text"
                             value={prompt}
                             onChange={(e) => setPrompt(e.target.value)}
-                            placeholder="Describe your Jeff PFP (e.g. A Jeff astronaut on mars)..."
+                            placeholder="describe your jeff pfp (e.g. a jeff astronaut on mars)..."
                             className="flex-1 bg-transparent border-none outline-none px-6 text-[#1a1a1a] placeholder:text-gray-400 font-medium text-sm md:text-base h-12 w-full"
                         />
 
@@ -101,11 +101,11 @@ const JeffLanding: React.FC = () => {
                             {isGenerating ? (
                                 <>
                                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                    <span>Cooking...</span>
+                                    <span>cooking...</span>
                                 </>
                             ) : (
                                 <>
-                                    <span>Create Jeff</span>
+                                    <span>create jeff</span>
                                 </>
                             )}
                         </button>
@@ -123,7 +123,7 @@ const JeffLanding: React.FC = () => {
                                     <img src={baseImage} className="w-full h-full object-cover" alt="Original Jeff" />
                                     {/* Overlay Label */}
                                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/20 backdrop-blur-md rounded-full text-white/90 text-xs font-bold tracking-widest border border-white/10">
-                                        Original
+                                        original
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ const JeffLanding: React.FC = () => {
                                             {/* Action overlay for generated image */}
                                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
                                                 <button className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all">
-                                                    <Download size={16} /> Download PFP
+                                                    <Download size={16} /> download pfp
                                                 </button>
                                             </div>
                                         </>
@@ -154,7 +154,7 @@ const JeffLanding: React.FC = () => {
                                             <div className="w-20 h-20 mb-4 rounded-full bg-black/5 flex items-center justify-center">
                                                 <ImageIcon className="text-[#1a1a1a] w-8 h-8" />
                                             </div>
-                                            <p className="font-medium text-[#1a1a1a]">Your jeff will appear here</p>
+                                            <p className="font-medium text-[#1a1a1a]">your jeff will appear here</p>
                                         </div>
                                     )}
                                 </div>
