@@ -6,7 +6,7 @@
 # YOU MUST UPDATE THIS URL AFTER DEPLOYING TO RENDER
 [[redirects]]
   from = "/api/*"
-  to = "https://YOUR-RENDER-BACKEND-URL.onrender.com/api/:splat"
+  to = "https://backend-jeff.onrender.com/api/:splat"
   status = 200
   force = true
 
