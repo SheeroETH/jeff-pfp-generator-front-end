@@ -61,8 +61,8 @@ const JeffLanding: React.FC = () => {
                 <div className="flex flex-col items-center text-center max-w-3xl animate-fade-in-up">
 
                     {/* Live Counter Pill */}
-                    <div className="relative mb-6">
-                        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/50 bg-white/20 backdrop-blur-sm text-xs font-semibold uppercase tracking-wide text-gray-900 shadow-sm">
+                    <div className="relative mb-6 mt-12">
+                        <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/50 bg-white/20 backdrop-blur-sm text-xs font-semibold tracking-wide text-gray-900 shadow-sm">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -106,7 +106,6 @@ const JeffLanding: React.FC = () => {
                             ) : (
                                 <>
                                     <span>Create Jeff</span>
-                                    <Wand2 size={16} />
                                 </>
                             )}
                         </button>
@@ -123,7 +122,7 @@ const JeffLanding: React.FC = () => {
                                 <div className="w-full h-full rounded-[30px] overflow-hidden relative">
                                     <img src={baseImage} className="w-full h-full object-cover" alt="Original Jeff" />
                                     {/* Overlay Label */}
-                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/20 backdrop-blur-md rounded-full text-white/90 text-xs font-bold tracking-widest uppercase border border-white/10">
+                                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-black/20 backdrop-blur-md rounded-full text-white/90 text-xs font-bold tracking-widest border border-white/10">
                                         Original
                                     </div>
                                 </div>
