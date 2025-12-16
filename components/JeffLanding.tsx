@@ -12,7 +12,8 @@ const JeffLanding: React.FC = () => {
         setGeneratedImage(null); // Reset previous image
 
         try {
-            const response = await fetch('/api/generate', {
+            // Direct call to Render backend to avoid Netlify 26s timeout
+            const response = await fetch('https://backend-jeff.onrender.com/api/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,9 +29,10 @@ const JeffLanding: React.FC = () => {
             const data = await response.json();
             setGeneratedImage(data.result);
 
-        } catch (error) {
+        } catch (error: any) {
             console.error("Generation error:", error);
-            alert("Failed to create Jeff. Please try again."); // Simple feedback
+            // Show specific error from backend (e.g., "Daily limit reached")
+            alert(error.message || "Failed to create Jeff. Please try again.");
         } finally {
             setIsGenerating(false);
         }
