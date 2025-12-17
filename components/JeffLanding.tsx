@@ -38,6 +38,26 @@ const JeffLanding: React.FC = () => {
         }
     };
 
+    const handleDownload = async () => {
+        if (!generatedImage) return;
+
+        try {
+            const response = await fetch(generatedImage);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `jeff-pfp-${Date.now()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Download failed:', error);
+            window.open(generatedImage, '_blank');
+        }
+    };
+
     // Original Jeff Image (Base)
     const baseImage = "/jeff-original.png";
 
@@ -146,7 +166,10 @@ const JeffLanding: React.FC = () => {
                                             <img src={generatedImage} className="w-full h-full object-cover animate-in fade-in zoom-in duration-500" alt="Generated Jeff" />
                                             {/* Action overlay for generated image */}
                                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
-                                                <button className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all">
+                                                <button
+                                                    onClick={handleDownload}
+                                                    className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all hover:bg-gray-100"
+                                                >
                                                     <Download size={16} /> download pfp
                                                 </button>
                                             </div>
